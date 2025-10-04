@@ -1,0 +1,9 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/symfony_test/Eedn/e-school/
+    - /bn/cp -R * $DEPLOYPATH
+  exclude:
+    - .git
+    - .github
+    - /mysql
+    - .idea
