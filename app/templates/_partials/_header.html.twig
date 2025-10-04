@@ -1,0 +1,70 @@
+<header class="container p-3 ">
+	<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded  ">
+		<div class="container-fluid ">
+
+			<!-- Logo -->
+			<!-- Partie gauche : logo + burger sur petit écran -->
+				<div class="d-flex align-items-center justify-content-between w-100 d-lg-none p-2"> <a class="navbar-brand m-0" href="/">
+					<img src="{{ asset('images/logo_eschool.png') }}" alt="Logo de e-school" class="img-fluid logo-responsive">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+
+			<!-- Partie logo seul pour écran large -->
+			<a class="navbar-brand d-none d-lg-block" href="/">
+				<img src="{{ asset('images/logo_eschool.png') }}" alt="Logo de e-school" class="img-fluid logo-responsive-lg">
+			</a>
+
+			<!-- Menu de navigation -->
+			<div
+				class="collapse navbar-collapse p-2" id="mainNavbar">
+				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+					{% if is_granted('ROLE_USER') %}
+						<ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-lg-center gap-3">
+						<li class="nav-item">
+							<a class="nav-link fs-5 " href="{{ path('app_home') }}">Accueil</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link fs-5 " href="{{ path('app_profile') }}">mon-compte</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link fs-5 " href="{{ path('app_logout') }}">logout</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link fs-5 " href="{{ path('app_home') }}#contact">Contact</a>
+					</li>
+				</ul>
+					{% endif %}
+				{% else %}
+				<!-- Liens de navigation -->
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-lg-center gap-3">
+					<li class="nav-item">
+						<a class="nav-link fs-5 " href="{{ path('app_home') }}">Accueil</a>
+					</li>
+					{# <li class="nav-item">
+						<a class="nav-link fs-5" href="{{ path('app_catalogue') }}">Catalogue</a>
+					</li> #}
+					<li class="nav-item">
+						<a class="nav-link fs-5 " href="{{ path('app_login') }}">Login</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link fs-5 " href="{{ path('app_register') }}">Signup</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link fs-5 " href="{{ path('app_home') }}#contact">Contact</a>
+					</li>
+				</ul>
+				{% endif %}
+
+
+				<!-- Barre de recherche -->
+				<form class="d-flex mt-3 mt-lg-0 ms-lg-4 " role="search">
+					<input class="form-control w-100 me-3 fs-6" type="search" name="search" placeholder="Recherche...">
+					<button class="btn btn-outline-primary" type="submit">🔍</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+</header>

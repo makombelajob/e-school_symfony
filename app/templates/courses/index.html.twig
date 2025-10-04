@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CoursesController!{% endblock %}
+
+{% block body %}
+    <main id="formation" class="row">
+        <section class="col-12 mt-4">
+            <div class="row">
+                <h1 class="text-center pb-5">Formation en développement <span
+                        class="text-uppercase fs-1">{{ cours.title }}</span></h1>
+            </div>
+            <div class="row flex-column flex-md-row shadow-sm mb-4">
+                <p class="text-center pb-5">Cette formation vous permet d'acquérir les bases indispensables à la
+                    création de pages web modernes.</p>
+
+                <div class="col-12 col-md-8 mb-4">
+                    <img src="{{ asset('images/formations/' ~ cours.title  ~ '_image.png') }}" class="img-fluid rounded" alt="Exemple de formation">
+                </div>
+                <div class="col-12 col-md-4">
+                    <h2 class="text-center pb-5">Détails de la formation</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item">Durée : {{ cours.duration }} Heures</li>
+                        <li class="list-group-item">Langues : Français</li>
+                        <li class="list-group-item">Contenu : {{ cours.content }} exercices interactifs</li>
+                        <li class="list-group-item">Accès : Mobile & PC</li>
+                        <li class="list-group-item">Prix : {{ cours.price }} euros</li>
+                        <li class="list-group-item">Certification incluse</li>
+                    </ul>
+                    <div class="pt-4 mb-4 text-center">
+                        <a href="{{ path('app_register') }}" type="submit" class="btn btn-secondary">Inscrivez-vous !</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

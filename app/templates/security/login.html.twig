@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/login.js') }}" defer></script>
+{% endblock %}
+{% block body %}
+    <section class="container my-2 pt-3 rounded-2" id="login">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow border-0">
+                    <div class="card-body bg-white rounded-4 p-4">
+                        <h2 class="fs-3 text-uppercase text-center mb-4">Connexion</h2>
+
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+
+                        {#{% if app.user %}
+                            <div class="mb-3">
+                                Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+                            </div>
+                        {% endif %}#}
+
+                        <form method="post" >
+                            <div class="mb-4">
+                                <label for="username" class="form-label fs-6">Email</label>
+                                <input type="email" value="{{ last_username }}" name="_username" id="username" class="form-control"
+                                       autocomplete="email" required autofocus placeholder="Adresse e-mail">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="password" class="form-label fs-6">Mot de passe</label>
+                                <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password"
+                                       required placeholder="Mot de passe">
+                            </div>
+
+                            <input type="hidden" name="_csrf_token" data-controller="csrf-protection"
+                                   value="{{ csrf_token('authenticate') }}">
+
+                            {#
+                            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                            See https://symfony.com/doc/current/security/remember_me.html
+
+                            <div class="checkbox mb-3">
+                                <input type="checkbox" name="_remember_me" id="_remember_me">
+                                <label for="_remember_me">Se souvenir de moi</label>
+                            </div>
+                            #}
+
+                            <div class="text-center mb-4">
+                                <button class="btn btn-primary btn-lg px-4 py-2 fs-5" type="submit">
+                                    Se connecter
+                                </button>
+                            </div>
+
+                            <div class="text-center mb-4">
+                                <p>Mot de passe oublié ?</p>
+                                <a href="{{ path('app_reset_password') }}" class="btn btn-secondary fs-5">
+                                    Réinitialiser
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,215 @@
+{% extends 'base.html.twig' %}
+{# {% include 'images/sprites.svg' %} #}
+{% block title %}page d'accueil
+{% endblock %}
+
+{% block body %}
+	<section class="row">
+		<h1 class="col-12 text-center fs-1 fw-bolder my-4 py-4 text-uppercase">E-school</h1>
+		<div class="carousel slide col-12" id="carousel">
+			<article class="carousel-inner">
+				<figure class="carousel-item active">
+					<img class="d-block w-100" src="{{ asset('images/image_du_slide.jpeg') }}" alt="Image de l'école">
+					<figcaption class="carousel-caption">
+						<h2 class="fs-1">E-school</h2>
+						<p>Nos actions</p>
+					</figcaption>
+				</figure>
+				<figure class="carousel-item">
+					<img class="d-block w-100" src="{{ asset('images/image_du_slide_2.jpeg') }}" alt="Image de l'école">
+					<figcaption class="carousel-caption d-none d-md-block">
+						<h2 class="fs-1">E-school</h2>
+						<p>Nos actions</p>
+					</figcaption>
+				</figure>
+				<figure class="carousel-item">
+					<img class="d-block w-100" src="{{ asset('images/image_du_slide_3.jpeg') }}" alt="Image de l'école">
+					<figcaption class="carousel-caption">
+						<h2 class="fs-1">E-school</h2>
+						<p>Nos actions</p>
+					</figcaption>
+				</figure>
+			</article>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	</section>
+
+	<!-- Section de la présentation de l'école -->
+	<section class="row">
+		<h2 class="text-center text-uppercase fs-1 my-4 py-4 ">🏫 Présentation</h2>
+		<div class="row justify-content-between">
+			<article class="col-md-5 card m-2">
+				<img class="card-img-top" src="{{ asset('images/image_du_slide_2.jpeg') }}" alt="Image de representation de l'ecole">
+				<div class="card-body">
+					<h2 class="card-title fs-4 text-center fw-semibold text-uppercase my-3">Votre avenir commence ici, avec eSchool.</h2>
+					<p class="card-content fs-5">Chez
+						<span class="text-uppercase fw-bolder">eSchool</span>, nous croyons que l’apprentissage doit être accessible, efficace et connecté au monde d’aujourd’hui. C’est pourquoi nous proposons des formations en ligne conçues pour s’adapter à votre rythme.
+					</p>
+					<div class="text-center">
+						<a href="{{ path('app_about') }}" class="btn btn-primary fs-4">Savoir Plus</a>
+					</div>
+				</div>
+			</article>
+			<article class="col-md-5 card m-2">
+
+				<img class="card-img-top" src="{{ asset('images/image_du_slide_2.jpeg') }}" alt="Image catalogue de l'ecole">
+				<div class="card-body">
+					<h2 class="card-title fs-4 text-center fw-semibold text-uppercase my-3">Pourquoi choisir eSchool?</h2>
+					<p class="card-content fs-5">
+						<span class="text-uppercase fw-bolder">eSchool</span>, c’est une équipe
+							dédiée à votre réussite. Nous croyons fermement que l’éducation doit être adaptée aux besoins du monde moderne, tout en restant accessible à toutes et à tous.</p>
+					<div class="text-center">
+						<a href="{{ path('app_about') }}" class="btn btn-primary fs-4">Savoir Plus</a>
+					</div>
+				</div>
+			</article>
+			<article class="col-md-5 card m-1 row">
+				<img class="card-img-top" src="{{ asset('images/image_du_slide_3.jpeg') }}" alt="Image nos valeurs de l'ecole">
+				<div class="card-body col-12">
+					<h2 class="card-title fs-4 text-center fw-semibold text-uppercase my-3">Nos valeurs</h2>
+					<ul class="card-content list-unstyled row">
+						<li class="fs-5">
+							<div class="col-12 my-2">
+								<span class=" text-uppercase text-secondary fw-semibold fs-4">Innovation</span>
+							</div>
+							Nous utilisons les dernières technologies pour rendre votre apprentissage plus interactif.
+						</li>
+						<li class="fs-5">
+							<div class="col-12 my-2">
+								<span class="text-uppercase text-secondary fw-semibold fs-4">Accessibilité</span>
+							</div>
+							Apprenez à votre rythme, où que vous soyez, avec des cours 100% accéssible en ligne.
+						</li>
+						<li class="fs-5">
+							<div class="col-12 my-2">
+								<span class="text-uppercase text-secondary fw-semibold fs-4">Excellence</span>
+							</div>
+							Nos formateurs sont des experts dans leur domaine, vous garantissant une formation de
+																												                            qualité.
+						</li>
+					</ul>
+					<div class="text-center">
+						<a href="{{ path('app_about') }}" class="btn btn-primary fs-4">Savoir Plus</a>
+					</div>
+				</div>
+			</article>
+			<article class="col-md-5 card m-2 row">
+				<img class="card-img-top" src="{{ asset('images/image_du_slide_2.jpeg') }}" alt="Image representant l'ecole">
+				<div class="card-body">
+					<h2 class="card-title fs-4 text-uppercase fw-semibold text-center my-2">Témoignages d’étudiants</h2>
+					<p class="card-text fs-5 my-4">"Grâce à eSchool, j’ai réussi ma reconversion professionnelle et j’ai
+					    trouvé un emploi dans les 6 mois suivant ma certification !L’accompagn personnalisé  qualité des cour vraiment fait la différence.Aujourd’hui, je m’épanouis pleinement dans mon nouveau métier !"
+						<div class="col-12 text-center ">
+							<span class="fw-semibold fs-5 text-uppercase">Marie, diplômée 2024</span>
+						</div>
+					</p>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	{# Section de la présentation des formations #}
+	<section>
+		<h2 class="fs-1 text-uppercase text-center my-3">Nos formations Frontend et Backend</h2>
+		<div class="row">
+			{% for category in categories %}
+			<h3 class="fs-3 fw-semibold my-3 text-uppercase text-primary-emphasis">Formations {{ category.name }}</h3>
+			<h4 class="fs-4 my-2 fw-semibold text-secondary">Objectif de la formation :</h4>
+			<p class="fs-5">Maîtriser les bases du développement web pour créer des sites web interactifs et responsives.</p>
+			<h5 class="fs-4 text-info-emphasis my-3 fw-semibold">Contenu de la formation</h5>
+			<div class="row justify-content-between">
+				{% for course in category.courses %}
+				
+				<article class="col-md card m-2">
+					<svg class="m-auto my-3" width="150px" height="150px">
+						<use xlink:href="{{ asset('images/sprites.svg') }}#{{ course.title|lower }}"></use>
+					</svg>
+					<div class="card-body">
+						<div class="text-center">
+							<h2 class="card-title fs-1 text-uppercase fw-bolder">
+								<strong class="text-primary fs-3">{{ course.title }}
+								</strong></h2>
+							<div class="text-center">
+								<a href="{{ path('app_formation', {id:course.id}) }}" class="btn btn-primary fs-4">Savoir plus</a>
+							</div>
+						</div>
+					</div>
+				</article>
+			
+				{% endfor %}
+			{% endfor %}
+			</div>
+		</div>
+	</section>
+	{# Section géolocalisation #}
+	<section class="row">
+		<h2 class="fs-2 text-uppercase text-center my-3">Notre Localisation</h2>
+		<iframe class="w-100 shadow p-3 mb-5  rounded-1 overflow-hidden" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.999906318043!2d2.293308315674779!3d48.85837007928774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc7f5f3406f%3A0xa17b6e9c1613b9b!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1714123456789!5m2!1sfr!2sfr" width="600" height="450" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</section>
+
+	{# Section de contact #}
+	<section class="container my-5 pt-3 rounded-2" id="contact">
+		<div class="row justify-content-center">
+			<div class="col-lg-8">
+				<div class="card shadow border-0">
+					<div class="card-body bg-white rounded-4 p-4">
+						<h2 class="fs-3 text-uppercase text-center mb-4">Contactez-Nous</h2>
+
+						{{ form_start(form, {'attr': {'id':'contactForm', 'novalidate': 'novalidate'}}) }}
+
+						<div class="mb-4">
+							{{ form_label(form.email, null, {'label_attr': {'class': 'form-label fs-6'}}) }}
+							{{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+							<div class="invalid-feedback">
+								Veuillez entrer un email valide
+							</div>
+						</div>
+
+						<div class="mb-4">
+							{{ form_label(form.subject, null, {'label_attr': {'class': 'form-label fs-6'}}) }}
+							{{ form_widget(form.subject, {'attr': {'class': 'form-control'}}) }}
+							<div class="invalid-feedback">
+								Au moins 5 caractères obligatoire
+							</div>
+						</div>
+
+						<div class="mb-4">
+							{{ form_label(form.message, null, {'label_attr': {'class': 'form-label fs-6'}}) }}
+							{{ form_widget(form.message, {'attr': {'class': 'form-control', 'rows': '6'}}) }}
+							<div class="invalid-feedback">
+								Au moins 5 caractères obligatoire
+							</div>
+						</div>
+
+						<div class="form-check mb-3 px-0">
+							{{ form_widget(form.agreeTerms, {'attr': {'class': 'form-check-input'}}) }}
+							{{ form_label(form.agreeTerms, null, {'label_attr': {'class': 'form-check-label'}}) }}
+						</div>
+
+
+						<div class="text-center">
+							{{ form_row(form.envoyer, {'attr': {'class': 'btn btn-primary btn-envoyer px-4 py-2 fs-5'}}) }}
+						</div>
+
+						{{ form_end(form) }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="">
+		<a href="#" class="position-fixed bottom-0 end-0 m-4">
+			<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="lightblue" class="bi bi-arrow-up-circle-fill" viewbox="0 0 16 16">
+				<path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+			</svg>
+		</a>
+	</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Formation {% endblock %}
+
+{% block body %}
+
+<main >
+
+	<section id="formation" class="container mt-4 p-4 shadow-sm d-flex flex-column align-items-center text-center">
+    <h1 class="pb-5 pt-4">Formation en développement {{ cours.title }}</h1>
+
+     
+    <div class="mb-4 py-4">
+        <img src="{{ asset('images/formations/' ~ cours.title ~ '_image.png') }}"
+             class="img-fluid rounded shadow-lg"
+             alt="Exemple de formation image générée par IA"
+             style="max-width: 600px;">
+    </div>
+
+   
+    <div id="details" class="w-100" style="max-width: 600px;">
+        <h2 class="pb-3 text-start">Détails de la formation</h2>
+        <ul class="list-group text-start">
+            <li class="list-group-item">
+                <i class="bi bi-clock me-2" style="color: #007bff; font-size: 1.5rem;"></i>
+                Durée : {{ cours.duration }} Heures
+            </li>
+            <li class="list-group-item">
+                <i class="bi bi-translate me-2" style="color: #28a745; font-size: 1.5rem;"></i>
+                Langues : Français
+            </li>
+            <li class="list-group-item">
+                <i class="bi bi-book me-2" style="color: #ffc107; font-size: 1.5rem;"></i>
+                Contenu : {{ cours.content }} exercices pratiques
+            </li>
+            <li class="list-group-item">
+                <i class="bi bi-currency-euro me-2" style="color: #e01cc3; font-size: 1.5rem;"></i>
+                Prix : <strong>{{ cours.price }}</strong> Euros
+            </li>
+            <li class="list-group-item">
+                <i class="bi bi-phone me-2" style="color: #007bff; font-size: 1.5rem;"></i> Accès : Mobile & PC
+            </li>
+            <li class="list-group-item">
+                <i class="bi bi-award me-2" style="color: #28a745; font-size: 1.5rem;"></i> Certification incluse
+            </li>
+        </ul>
+
+        <!-- Bouton centré -->
+        <div class="mt-4 text-center">
+            <a href="{{ path('app_register') }}" class="btn p-2 btn-primary">Inscrivez-vous !</a>
+        </div>
+    </div>
+</section>
+
+
+	<div class="container mt-4 shadow-sm ">
+		{{ cours.description | raw }}
+	</div>
+
+</main>
+{% endblock %}

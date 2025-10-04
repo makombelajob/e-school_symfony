@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+{% block title %}Inscription{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/register.js') }}" defer></script>
+{% endblock %}
+
+
+{% block body %}
+    <section class="container my-2 pt-3 rounded-2" id="registration">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow border-0">
+                    <div class="card-body bg-white rounded-4 p-4">
+                        <h2 class="fs-3 text-uppercase text-center mb-4">Inscription</h2>
+
+                        {{ form_errors(registrationForm) }}
+                        {{ form_start(registrationForm, {'attr': {'id':'registrationForm', 'novalidate': 'novalidate'}}) }}
+
+                        <div class="mb-4">
+                            {{ form_row(registrationForm.email, {
+                                'label_attr': {'class': 'form-label fs-6'}
+                            }) }}
+                        </div>
+
+                        <div class="mb-4">
+                            {{ form_row(registrationForm.lastname, {
+                                'label_attr': {'class': 'form-label fs-6'}
+                            }) }}
+                        </div>
+
+                        <div class="mb-4">
+                            {{ form_row(registrationForm.firstname, {
+                                'label_attr': {'class': 'form-label fs-6'}
+                            }) }}
+                        </div>
+
+                        <div class="mb-4">
+                            {{ form_row(registrationForm.plainPassword, {
+                                label: 'Mots de passe',
+                                'label_attr': {'class': 'form-label fs-6'}
+                            }) }}
+                        </div>
+
+                        <div class="mb-4">
+                            {{ form_row(registrationForm.agreeTerms, {
+                                'label_attr': {'class': 'form-check-label'}
+                            }) }}
+                        </div>
+
+                        <div class="text-center mb-4">
+                            <button type="submit" class="btn btn-success btn-lg px-4 py-2 fs-5">S'inscrire</button>
+                        </div>
+
+                        {{ form_end(registrationForm) }}
+
+                        <div class="text-center">
+                            <p>Vous avez déjà un compte ?</p>
+                            <a href="{{ path('app_login') }}" class="btn btn-primary btn-lg fs-5">Se connecter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

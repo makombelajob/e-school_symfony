@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos formations{% endblock %}
+
+{% block body %}
+    <main id="nos-formation" class="row">
+        <section class="col-12 mt-4">
+            {% for cours in courses %}
+<article class="col-12 alert alert-success">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="text-center pb-5">
+                Formation en développement <span class="text-uppercase fs-1">{{ cours.title }}</span>
+            </h1>
+        </div>
+
+        <div class="col-md-12 d-md-flex align-items-stretch">
+            <!-- Colonne image -->
+            <div class="col-md-5 p-0 mb-2">
+                <img src="{{ asset('images/formations/' ~ cours.title ~ '_image.png') }}"
+                     alt="Image de la formation"
+                     class="rounded-2 img-fluid w-100 h-100 object-fit-cover" style="object-fit: cover;" />
+            </div>
+
+            <!-- Colonne détails -->
+            <div class="col-md-7 d-flex flex-column justify-content-between p-4 bg-white me-md-3cd ms-md-3">
+                <div>
+                    <h2 class="text-center mb-3">Détails de la formation</h2>
+                    <ul class="list-group mb-4">
+                        <li class="list-group-item">Durée : {{ cours.duration }} Heures</li>
+                        <li class="list-group-item">Langues : Français</li>
+                        <li class="list-group-item">Contenu : {{ cours.content }} exercices interactifs</li>
+                        <li class="list-group-item">Accès : Mobile & PC</li>
+                        <li class="list-group-item">Prix : <strong>{{ cours.price }}</strong> euros</li>
+                        <li class="list-group-item">Certification incluse</li>
+                    </ul>
+                </div>
+                <div class="text-center mt-auto">
+                    <a href="{{ path('app_payment', {id:cours.id}) }}" class="btn btn-secondary">
+                        Acheter maintenant
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+            {% endfor %}
+        </section>
+    </main>
+{% endblock %}
